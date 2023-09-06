@@ -7,7 +7,7 @@ proxy_wasm_plugin_rust(
     srcs = ["plugin.rs"],
     deps = [
         "@proxy_wasm_rust_sdk//:proxy_wasm",
-        "@proxy_wasm_rust_sdk//bazel/cargo:log",
+        "//cargo:log",
     ],
 )
 

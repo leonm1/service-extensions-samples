@@ -33,6 +33,10 @@ uint64_t TestContext::getMonotonicTimeNanoseconds() {
   unimplemented();
   return 0;
 }
+proxy_wasm::WasmResult TestContext::log(uint32_t level, std::string_view message) {
+  std::cout << "LOG from wasm: " << message << std::endl;
+  return proxy_wasm::TestContext::log(level, message);
+}
 
 proxy_wasm::WasmResult TestHttpContext::getHeaderMapSize(
     proxy_wasm::WasmHeaderMapType type, uint32_t* result) {
